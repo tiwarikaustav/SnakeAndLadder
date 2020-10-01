@@ -31,7 +31,7 @@ namespace SnakeLadderProblem
                     default:
                         break;
                 }
-                //Console.WriteLine("Current position is: {0}", currentPosition);
+                Console.WriteLine("Current position is: {0}", currentPosition);
                 noOfMoves++;
             }
             Console.WriteLine("Total Moves to reach destination: {0}", noOfMoves);
