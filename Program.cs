@@ -8,26 +8,33 @@ namespace SnakeLadderProblem
         {
             const int START_POSITION = 0;
             int currentPosition = START_POSITION;
+            int winPosition = 100;
             const int NO_PLAY = 0, SNAKE = 1, LADDER = 2;
-            int dieNum = RandomNumber(7);
-            int optionCheck = RandomNumber(3);
-            Console.WriteLine("Die Number is: {0}", dieNum);
-            Console.WriteLine("Option is: {0}", optionCheck);
-            switch (optionCheck)
+            int noOfMoves = 0;
+            while (currentPosition < winPosition)
             {
-                case NO_PLAY:
-                    break;
-                case SNAKE:
-                    currentPosition -= dieNum;
-                    break;
-                case LADDER:
-                    currentPosition += dieNum;
-                    if (currentPosition < 0) currentPosition = 0;
-                    break;
-                default:
-                    break;
+                int dieNum = RandomNumber(7);
+                int optionCheck = RandomNumber(3);
+                //Console.WriteLine("Die Number is: {0}", dieNum);
+                //Console.WriteLine("Option is: {0}", optionCheck);
+                switch (optionCheck)
+                {
+                    case NO_PLAY:
+                        break;
+                    case SNAKE:
+                        currentPosition -= dieNum;
+                        break;
+                    case LADDER:
+                        currentPosition += dieNum;
+                        if (currentPosition < 0) currentPosition = 0;
+                        break;
+                    default:
+                        break;
+                }
+                //Console.WriteLine("Current position is: {0}", currentPosition);
+                noOfMoves++;
             }
-            Console.WriteLine("Current position is: {0}", currentPosition);
+            Console.WriteLine("Total Moves to reach destination: {0}", noOfMoves);
         }
 
         //returns 1 to 6, rolling of a die
