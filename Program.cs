@@ -23,10 +23,10 @@ namespace SnakeLadderProblem
                         break;
                     case SNAKE:
                         currentPosition -= dieNum;
+                        if (currentPosition < 0) currentPosition = 0;
                         break;
                     case LADDER:
-                        currentPosition += dieNum;
-                        if (currentPosition < 0) currentPosition = 0;
+                        if(currentPosition + dieNum <= winPosition) currentPosition += dieNum;      
                         break;
                     default:
                         break;
